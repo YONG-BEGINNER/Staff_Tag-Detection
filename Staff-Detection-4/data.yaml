@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['Staff_tag']
+
+roboflow:
+  workspace: staff-identification-xkow9
+  project: staff-detection-fouci
+  version: 4
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/staff-identification-xkow9/staff-detection-fouci/dataset/4
