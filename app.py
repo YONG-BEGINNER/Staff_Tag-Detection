@@ -43,7 +43,7 @@ if uploaded_file is not None:
             st.image(image, caption="Uploaded Image")
 
             # Run model prediction and save results in text format
-            results = model.predict(source=image, save_txt=True, iou=0.7, conf=0.5)
+            results = model.predict(source=image, save_txt=True, iou=0.5, conf=0.5)
             result_img = results[0].plot()
             result_img_rgb = Image.fromarray(result_img[..., ::-1])
             # Display the processed image
@@ -87,7 +87,7 @@ if uploaded_file is not None:
         
         with st.spinner("Processing video... This may take a while."):
             # Run model prediction on the video
-            results = model.predict(source=tfile.name, save=True, save_txt=True, iou=0.7, conf=0.6)
+            results = model.predict(source=tfile.name, save=True, save_txt=True, iou=0.5, conf=0.5)
             
         input_video = os.path.join(result_path, os.path.basename(tfile.name).replace(".mp4", ".avi"))
         output_video = os.path.join(result_path, os.path.basename(tfile.name).replace(".avi", ".mp4"))
